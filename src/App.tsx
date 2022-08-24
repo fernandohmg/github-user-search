@@ -3,12 +3,11 @@ import "@fontsource/space-mono/700.css";
 import { useState } from "react";
 import iconMoon from "../src/assets/icon-moon.svg";
 import iconSun from "../src/assets/icon-sun.svg";
-import { Dd } from "./components/Dd";
-import { Dt } from "./components/Dt";
 import { IconCompany } from "./components/icon/IconCompany";
 import { IconLocation } from "./components/icon/IconLocation";
 import { IconTwitter } from "./components/icon/IconTwitter";
 import { IconWebsite } from "./components/icon/IconWebsite";
+import { IconWrapper } from "./components/icon/IconWrapper";
 
 const DARK_MODE_CLASS = "dark";
 
@@ -83,37 +82,49 @@ function App() {
             odio. Quisque volutpat mattis eros.
           </p>
           <dl className="rounded-xl bg-light-F6F8FF dark:bg-dark-141D2F grid grid-cols-3 grid-rows-2 place-items-center px-5 py-3.5">
-            <Dt>Repos</Dt>
-            <Dd>8</Dd>
-            <Dt>Followers</Dt>
-            <Dd>5133</Dd>
-            <Dt>Following</Dt>
-            <Dd>9</Dd>
+            <dt className="text-xxs font-normal leading-4 text-light-4B6A9B dark:text-white row-start-1">
+              Repos
+            </dt>
+            <dd className="font-bold leading-6 text-light-2B3442 dark:text-white row-start-2">
+              8
+            </dd>
+            <dt className="text-xxs font-normal leading-4 text-light-4B6A9B dark:text-white row-start-1">
+              Followers
+            </dt>
+            <dd className="font-bold leading-6 text-light-2B3442 dark:text-white row-start-2">
+              5133
+            </dd>
+            <dt className="text-xxs font-normal leading-4 text-light-4B6A9B dark:text-white row-start-1">
+              Following
+            </dt>
+            <dd className="font-bold leading-6 text-light-2B3442 dark:text-white row-start-2">
+              9
+            </dd>
           </dl>
           <dl className="grid grid-cols-footer items-center gap-x-3 gap-y-4 mt-6 auto-cols-min">
             <dt>
-              <IconLocation fill={isDarkTheme ? "#FFFFFF" : "#4b6a9b"} />
+              <IconWrapper icon={IconLocation} isDarkTheme={isDarkTheme} />
               <span className="sr-only">Location</span>
             </dt>
             <dd className="font-normal text-xs text-light-4B6A9B dark:text-white">
               San Francisco
             </dd>
             <dt>
-              <IconWebsite fill={isDarkTheme ? "#FFFFFF" : "#4b6a9b"} />
+              <IconWrapper icon={IconWebsite} isDarkTheme={isDarkTheme} />
               <span className="sr-only">Website</span>
             </dt>
             <dd className="font-normal text-xs text-light-4B6A9B dark:text-white">
               https://github.blog
             </dd>
             <dt>
-              <IconTwitter fill={isDarkTheme ? "#FFFFFF" : "#4b6a9b"} />
+              <IconWrapper icon={IconTwitter} isDarkTheme={isDarkTheme} />
               <span className="sr-only">Twitter</span>
             </dt>
             <dd className="font-normal text-xs text-light-4B6A9B dark:text-white">
               Twitter
             </dd>
             <dt>
-              <IconCompany fill={isDarkTheme ? "#FFFFFF" : "#4b6a9b"} />
+              <IconWrapper icon={IconCompany} isDarkTheme={isDarkTheme} />
               <span className="sr-only">Company</span>
             </dt>
             <dd className="font-normal text-xs text-light-4B6A9B dark:text-white">
