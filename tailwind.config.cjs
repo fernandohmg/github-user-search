@@ -37,6 +37,7 @@ module.exports = {
       },
       gridTemplateColumns: {
         footer: "20px auto",
+        "tablet-footer": "repeat(2, 20px auto)",
       },
     },
   },
