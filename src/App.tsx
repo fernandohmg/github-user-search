@@ -1,14 +1,14 @@
 import "@fontsource/space-mono/400.css";
 import "@fontsource/space-mono/700.css";
 import { useState } from "react";
-import iconCompany from "../src/assets/icon-company.svg";
-import iconLocation from "../src/assets/icon-location.svg";
 import iconMoon from "../src/assets/icon-moon.svg";
 import iconSun from "../src/assets/icon-sun.svg";
-import iconTwitter from "../src/assets/icon-twitter.svg";
-import iconWebsite from "../src/assets/icon-website.svg";
 import { Dd } from "./components/Dd";
 import { Dt } from "./components/Dt";
+import { IconCompany } from "./components/icon/IconCompany";
+import { IconLocation } from "./components/icon/IconLocation";
+import { IconTwitter } from "./components/icon/IconTwitter";
+import { IconWebsite } from "./components/icon/IconWebsite";
 
 const DARK_MODE_CLASS = "dark";
 
@@ -63,7 +63,7 @@ function App() {
             </button>
           </div>
         </form>
-        <section className="col-span-2 w-full bg-light-FEFEFE dark:bg-dark-1E2A47 rounded-2xl px-8 py-6 shadow-default">
+        <section className="col-span-2 w-full bg-light-FEFEFE dark:bg-dark-1E2A47 rounded-2xl px-8 pt-6 pb-12 shadow-default">
           <img
             className="rounded-full w-[4.375rem] h-[4.375rem] float-left mr-5"
             src="https://avatars.githubusercontent.com/u/5559337?v=4"
@@ -82,7 +82,7 @@ function App() {
             Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec
             odio. Quisque volutpat mattis eros.
           </p>
-          <dl className="rounded-xl bg-light-F6F8FF dark:bg-dark-1E2A47 grid grid-cols-3 grid-rows-2 place-items-center px-5 py-3.5">
+          <dl className="rounded-xl bg-light-F6F8FF dark:bg-dark-141D2F grid grid-cols-3 grid-rows-2 place-items-center px-5 py-3.5">
             <Dt>Repos</Dt>
             <Dd>8</Dd>
             <Dt>Followers</Dt>
@@ -92,28 +92,28 @@ function App() {
           </dl>
           <dl className="grid grid-cols-footer items-center gap-x-3 gap-y-4 mt-6 auto-cols-min">
             <dt>
-              <img src={iconLocation} alt="" width={20} height={20} />
+              <IconLocation fill={isDarkTheme ? "#FFFFFF" : "#4b6a9b"} />
               <span className="sr-only">Location</span>
             </dt>
             <dd className="font-normal text-xs text-light-4B6A9B dark:text-white">
               San Francisco
             </dd>
             <dt>
-              <img src={iconWebsite} alt="" width={20} height={20} />
+              <IconWebsite fill={isDarkTheme ? "#FFFFFF" : "#4b6a9b"} />
               <span className="sr-only">Website</span>
             </dt>
             <dd className="font-normal text-xs text-light-4B6A9B dark:text-white">
               https://github.blog
             </dd>
             <dt>
-              <img src={iconTwitter} alt="" width={20} height={20} />
+              <IconTwitter fill={isDarkTheme ? "#FFFFFF" : "#4b6a9b"} />
               <span className="sr-only">Twitter</span>
             </dt>
             <dd className="font-normal text-xs text-light-4B6A9B dark:text-white">
               Twitter
             </dd>
             <dt>
-              <img src={iconCompany} alt="" width={20} height={20} />
+              <IconCompany fill={isDarkTheme ? "#FFFFFF" : "#4b6a9b"} />
               <span className="sr-only">Company</span>
             </dt>
             <dd className="font-normal text-xs text-light-4B6A9B dark:text-white">

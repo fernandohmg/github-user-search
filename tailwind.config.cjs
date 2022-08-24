@@ -33,7 +33,7 @@ module.exports = {
         "icon-search": "url('/icon-search.svg')",
       },
       backgroundPosition: {
-        "left-center": "10px 13px",
+        "left-center": "10px 12px",
       },
       gridTemplateColumns: {
         footer: "20px auto",
