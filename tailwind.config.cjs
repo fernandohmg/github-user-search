@@ -18,6 +18,7 @@ module.exports = {
         "light-D7DCEF": "#D7DCEF",
         "light-F6F8FF": "#F6F8FF",
         "light-FEFEFE": "#FEFEFE",
+        "light-222731": "#222731",
         "dark-0079FF": "#0079FF",
         "dark-141D2F": "#141D2F",
         "dark-1E2A47": "#1E2A47",

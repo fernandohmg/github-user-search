@@ -9,7 +9,7 @@ interface DtProps
 export const Dd = ({ children, ...delegate }: DtProps) => {
   return (
     <dd
-      className="font-bold leading-6 text-light-2B3442 row-start-2"
+      className="font-bold leading-6 text-light-2B3442 dark:text-white row-start-2"
       {...delegate}
     >
       {children}
