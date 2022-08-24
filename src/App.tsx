@@ -25,8 +25,8 @@ function App() {
   };
 
   return (
-    <main className="font-mono min-h-full px-6 py-8 bg-light-F6F8FF dark:bg-dark-141D2F flex justify-center items-start">
-      <article className="grid grid-cols-2 gap-4 md:gap-6 max-w-[40.5rem]">
+    <main className="font-mono min-h-full px-6 py-8 md:pt-[8.75rem] xl:pt-36 bg-light-F6F8FF dark:bg-dark-141D2F flex justify-center items-start">
+      <article className="grid grid-cols-2 gap-4 md:gap-6 max-w-[40.5rem] xl:max-w-[45.625rem]">
         <p className="text-[1.625rem] leading-9 font-bold text-light-222731 dark:text-white">
           devfinder
         </p>
@@ -62,9 +62,9 @@ function App() {
             </button>
           </div>
         </form>
-        <section className="col-span-2 w-full bg-light-FEFEFE dark:bg-dark-1E2A47 rounded-2xl px-8 pt-6 pb-12 shadow-default md:p-10">
+        <section className="col-span-2 w-full bg-light-FEFEFE dark:bg-dark-1E2A47 rounded-2xl px-8 pt-6 pb-12 shadow-default md:p-10 xl:p-12 xl:grid xl:grid-cols-desktop-main-grid xl:gap-x-9">
           <img
-            className="rounded-full w-[4.375rem] h-[4.375rem] md:w-28 md:h-28 float-left mr-5 md:mr-10"
+            className="rounded-full w-[4.375rem] h-[4.375rem] md:w-28 md:h-28 float-left mr-5 md:mr-10 xl:m-0 row-span-6"
             src="https://avatars.githubusercontent.com/u/5559337?v=4"
             alt=""
           />
@@ -114,14 +114,28 @@ function App() {
               <span className="sr-only">Website</span>
             </dt>
             <dd className="font-normal text-xs md:text-base text-light-4B6A9B dark:text-white md:row-start-2">
-              https://github.blog
+              <a
+                className="hover-hover:hover:underline"
+                href="https://github.blog"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                https://github.blog
+              </a>
             </dd>
             <dt>
               <IconWrapper icon={IconTwitter} isDarkTheme={isDarkTheme} />
               <span className="sr-only">Twitter</span>
             </dt>
             <dd className="font-normal text-xs md:text-base text-light-4B6A9B dark:text-white">
-              Twitter
+              <a
+                className="hover-hover:hover:underline"
+                href="https://twitter.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                twitter
+              </a>
             </dd>
             <dt>
               <IconWrapper icon={IconCompany} isDarkTheme={isDarkTheme} />

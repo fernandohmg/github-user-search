@@ -38,6 +38,10 @@ module.exports = {
       gridTemplateColumns: {
         footer: "20px auto",
         "tablet-footer": "repeat(2, 20px auto)",
+        "desktop-main-grid": "115px auto",
+      },
+      screens: {
+        "hover-hover": { raw: "(hover: hover)" },
       },
     },
   },
