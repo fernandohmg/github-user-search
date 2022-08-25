@@ -19,9 +19,12 @@ module.exports = {
         "light-F6F8FF": "#F6F8FF",
         "light-FEFEFE": "#FEFEFE",
         "light-222731": "#222731",
+        "dark-90A4D4": "#90A4D4",
         "dark-0079FF": "#0079FF",
         "dark-141D2F": "#141D2F",
         "dark-1E2A47": "#1E2A47",
+        "60ABFF": "#60ABFF",
+        A4B3CC: "#A4B3CC",
       },
       boxShadow: {
         default: "0px 16px 30px -10px rgba(70, 96, 187, 0.198567)",

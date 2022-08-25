@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@fontsource/space-mono": "^4.5.9",
+    "axios": "^0.27.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
