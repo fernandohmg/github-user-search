@@ -81,7 +81,11 @@ function App() {
           )}
         </button>
         <form className="col-span-2 mt-2.5 md:mt-0" onSubmit={handleSubmit}>
-          <div className="bg-light-FEFEFE dark:bg-dark-1E2A47 rounded-2xl w-full flex p-1.5 gap-1 shadow-default">
+          <div
+            className={`bg-light-FEFEFE dark:bg-dark-1E2A47 rounded-2xl w-full flex p-1.5 gap-1 shadow-default ${
+              error ? "animate-error" : ""
+            }`}
+          >
             <label htmlFor="search-user" className="sr-only">
               Search GitHub username
             </label>

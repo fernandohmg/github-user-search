@@ -47,6 +47,21 @@ module.exports = {
       screens: {
         "hover-hover": { raw: "(hover: hover)" },
       },
+      animation: {
+        error: "error .5s 0.1s",
+      },
+      keyframes: {
+        error: {
+          "0%": { transform: "translateX(0px)" },
+          "37%": { transform: "translateX(5px)" },
+          "55%": { transform: "translateX(-5px)" },
+          "73%": { transform: "translateX(4px)" },
+          "82%": { transform: "translateX(-4px)" },
+          "91%": { transform: "translateX(2px)" },
+          "96%": { transform: "translateX(-2px)" },
+          "100%": { transform: "translateX(0px)" },
+        },
+      },
     },
   },
   plugins: [],
