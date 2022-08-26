@@ -25,6 +25,7 @@ module.exports = {
         "dark-1E2A47": "#1E2A47",
         "60ABFF": "#60ABFF",
         A4B3CC: "#A4B3CC",
+        F74646: "#F74646",
       },
       boxShadow: {
         default: "0px 16px 30px -10px rgba(70, 96, 187, 0.198567)",

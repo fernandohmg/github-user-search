@@ -12,22 +12,32 @@ import { IconWrapper } from "./components/icons/IconWrapper";
 import { convertDate } from "./utils/convertDate";
 import { User } from "./utils/user";
 
-const DARK_MODE_CLASS = "dark";
+const getThemeInitialState = () => {
+  if (
+    localStorage.theme === "dark" ||
+    (!("theme" in localStorage) &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches)
+  ) {
+    document.documentElement.classList.add("dark");
+    return true;
+  } else {
+    document.documentElement.classList.remove("dark");
+    return false;
+  }
+};
 
 function App() {
-  const [isDarkTheme, setIsDarkTheme] = useState(false);
+  const [isDarkTheme, setIsDarkTheme] = useState(getThemeInitialState);
   const [username, setUsername] = useState("");
   const [user, setUser] = useState<User>();
+  const [error, setError] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
 
   const handleThemeChange = () => {
     const classList = document.documentElement.classList;
-
-    classList.contains(DARK_MODE_CLASS)
-      ? classList.remove(DARK_MODE_CLASS)
-      : classList.add(DARK_MODE_CLASS);
-
-    setIsDarkTheme(classList.contains(DARK_MODE_CLASS));
+    isDarkTheme ? classList.remove("dark") : classList.add("dark");
+    localStorage.setItem("theme", isDarkTheme ? "light" : "dark");
+    setIsDarkTheme(!isDarkTheme);
   };
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
@@ -35,8 +45,15 @@ function App() {
     if (username) {
       setIsLoading(true);
       axios
-        .get<User>(`https://api.github.com/users/${username}`)
-        .then(({ data }) => setUser(data))
+        .get<User>(`https://api.github.com/users/${username.toLowerCase()}`)
+        .then((response) => {
+          setUser(response.data);
+          setError(false);
+        })
+        .catch(() => {
+          setError(true);
+          setUser(undefined);
+        })
         .finally(() => setIsLoading(false));
     }
   };
@@ -69,23 +86,28 @@ function App() {
               Search GitHub username
             </label>
             <input
-              className="bg-light-FEFEFE dark:bg-dark-1E2A47 text-light-222731 dark:text-white placeholder:text-light-4B6A9B dark:placeholder:text-white w-full bg-icon-search bg-no-repeat bg-left-center pl-11 text-xs leading-6"
+              className="bg-light-FEFEFE dark:bg-dark-1E2A47 text-light-222731 dark:text-white placeholder:text-light-4B6A9B dark:placeholder:text-white w-full bg-icon-search bg-no-repeat bg-left-center pl-11 text-xs leading-6 lowercase"
               id="search-user"
               type="text"
-              placeholder="Search GitHub username…"
-              onChange={(e) => setUsername(e.target.value)}
+              placeholder="username"
+              onChange={(e) => setUsername(e.target.value.trim())}
             />
             <button
               type="submit"
-              disabled={isLoading}
+              disabled={isLoading || !username}
               className={`bg-light-0079FF text-white rounded-xl px-4 py-3 disabled:bg-60ABFF enabled:hover-hover:hover:bg-60ABFF transition ${
                 isLoading ? "cursor-wait" : "cursor-pointer"
-              }`}
+              } ${!username ? "cursor-not-allowed" : "cursor-pointer"}`}
             >
               Search
             </button>
           </div>
         </form>
+        {error && (
+          <strong className="text-F74646 col-span-2 justify-self-center">
+            No results
+          </strong>
+        )}
         {user && (
           <section className="col-span-2 w-full bg-light-FEFEFE dark:bg-dark-1E2A47 rounded-2xl px-8 pt-6 pb-12 shadow-default md:p-10 xl:p-12 xl:grid xl:grid-cols-desktop-main-grid xl:gap-x-9">
             <img
