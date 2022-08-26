@@ -30,7 +30,7 @@ function App() {
   const [isDarkTheme, setIsDarkTheme] = useState(getThemeInitialState);
   const [username, setUsername] = useState("");
   const [user, setUser] = useState<User>();
-  const [error, setError] = useState(true);
+  const [error, setError] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
   const handleThemeChange = () => {
