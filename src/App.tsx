@@ -82,7 +82,7 @@ function App() {
         </button>
         <form className="col-span-2 mt-2.5 md:mt-0" onSubmit={handleSubmit}>
           <div
-            className={`bg-light-FEFEFE dark:bg-dark-1E2A47 rounded-2xl w-full flex p-1.5 gap-1 shadow-default ${
+            className={`bg-light-FEFEFE dark:bg-dark-1E2A47 rounded-2xl w-full flex p-1.5 md:p-2 gap-1 shadow-default ${
               error ? "animate-error" : ""
             }`}
           >
@@ -90,7 +90,8 @@ function App() {
               Search GitHub username
             </label>
             <input
-              className="bg-light-FEFEFE dark:bg-dark-1E2A47 text-light-222731 dark:text-white placeholder:text-light-4B6A9B dark:placeholder:text-white w-full bg-icon-search bg-no-repeat bg-left-center pl-11 text-xs leading-6 lowercase"
+              className="bg-light-FEFEFE dark:bg-dark-1E2A47 text-light-222731 dark:text-white placeholder:text-light-4B6A9B dark:placeholder:text-white w-full
+                        bg-icon-search bg-no-repeat bg-left-center md:bg-tablet-left-center pl-11 md:pl-[4.5rem] md:text-lg leading-6 lowercase"
               id="search-user"
               type="text"
               placeholder="username"
@@ -99,7 +100,7 @@ function App() {
             <button
               type="submit"
               disabled={isLoading || !username}
-              className={`bg-light-0079FF text-white rounded-xl px-4 py-3 disabled:bg-60ABFF enabled:hover-hover:hover:bg-60ABFF transition ${
+              className={`bg-light-0079FF text-white rounded-xl px-4 py-2.5 md:py-3.5 disabled:bg-60ABFF enabled:hover-hover:hover:bg-60ABFF transition ${
                 isLoading ? "cursor-wait" : "cursor-pointer"
               } ${!username ? "cursor-not-allowed" : "cursor-pointer"}`}
             >
