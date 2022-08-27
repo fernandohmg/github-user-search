@@ -100,7 +100,7 @@ function App() {
             <button
               type="submit"
               disabled={isLoading || !username}
-              className={`bg-light-0079FF text-white rounded-xl px-4 py-2.5 md:py-3.5 disabled:bg-60ABFF enabled:hover-hover:hover:bg-60ABFF transition ${
+              className={`bg-light-0079FF text-white rounded-xl px-4 md:px-6 py-2.5 md:py-3.5 disabled:bg-60ABFF enabled:hover-hover:hover:bg-60ABFF transition ${
                 isLoading ? "cursor-wait" : "cursor-pointer"
               } ${!username ? "cursor-not-allowed" : "cursor-pointer"}`}
             >
